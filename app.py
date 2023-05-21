@@ -35,8 +35,8 @@ class Order(db.Model):
         return f'<Order {self.product}>'
 
 # Routes
-@app.route("/clients", methods=['GET'])
-def get_clients():
+@app.route("/")
+def hell_world():
     clients = Client.query.all()
     client_dicts = [{'id': client.id, 'name': client.name} for client in clients]
     json_data = json.dumps(client_dicts)
